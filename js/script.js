@@ -8,6 +8,8 @@ let computerSelection = getComputerChoice();
 //console.log(humanSelection);
 //console.log(computerSelection);
 
+
+// give you some random choices 
 function random() {
     let randomstring = Math.floor(Math.random() * 3); 
   //console.log(computerChoice);
@@ -19,6 +21,8 @@ function random() {
       return "scissors";
   }
 }
+
+// generate numbers from 0 to 2 [0.1.2]
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random() * 3); 
   //console.log(computerChoice);
@@ -31,10 +35,13 @@ function getComputerChoice() {
   }
 }
 
+// get input from user and make it case insensitive 
 function getHumanChoice(Selection) {
     Selection = prompt("chose between rock paper scissors",random().toLowerCase());
     return Selection;
 }
+
+// our function for 5 game round 
 
 function playGame(h,p) {
     function playRound(humanChoice, computerChoice) {
@@ -72,8 +79,10 @@ function playGame(h,p) {
             console.log(`pc ${++computerScore}`);
         }
     }
+    //our loop to make the game go for 5 rounds
     for (let i = 1; i <= 5 ; i++) {
         h = getHumanChoice();
+        // user decide to cancel! 
         if (!h) {
             console.log("thank you for playing :D");
             break;
